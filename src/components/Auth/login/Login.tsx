@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const Login: React.FC = () => {
-    
     const [formData, setFormData] = useState<{ username: string; password: string }>({
         username: "",
         password: "",

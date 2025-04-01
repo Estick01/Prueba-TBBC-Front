@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -7,6 +9,11 @@ const axiosInstance = axios.create({
   },
   
 });
+
+let navigateRef:any;
+export const setNavigate = (navigate:any) => {
+  navigateRef = navigate;
+};
 
 axiosInstance.interceptors.request.use(
   (config) => {
@@ -27,7 +34,13 @@ axiosInstance.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      console.log("Token expirado o no autorizado");
+      localStorage.removeItem("auth_token");
+      if (navigateRef) {
+        navigateRef("/login");
+      } else {
+        window.location.href = "/";
+      }
+      alert("Tu sesión ha expirado. Por favor inicia sesión nuevamente.");
     }
     return Promise.reject(error);
   }

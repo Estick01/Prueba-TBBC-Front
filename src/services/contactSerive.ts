@@ -7,7 +7,6 @@ export const getContacts = async (): Promise<Contact[]> => {
         const response = await axiosInstance.get("/contacts/get_all");
         return response.data;
     } catch (error) {
-        console.error(error)
         throw new Error("Error fetching contacts");
     }
 };

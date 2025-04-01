@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Contactos Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es el frontend de la aplicación de Contactos, desarrollado con React y TypeScript.
 
-## Available Scripts
+## Características
+- CRUD de contactos.
+- Autenticación con JWT.
+- Búsqueda de contactos por nombre o teléfono.
+- Modal para agregar y editar contactos.
 
-In the project directory, you can run:
+## Tecnologías utilizadas
+- React 19
+- TypeScript
+- Axios para peticiones HTTP
+- React Router DOM para la navegación
+- JWT Decode para manejo de tokens
 
-### `npm start`
+## Instalación
+1. Clonar el repositorio:
+   ```sh
+   git clone https://github.com/Estick01/Prueba-TBBC-Front.git
+   cd contactos-frontend
+   ```
+2. Instalar dependencias:
+   ```sh
+   npm install
+   ```
+3. Configurar variables de entorno en `.env`:
+   ```sh
+   REACT_APP_API_URL=http://localhost:5000
+   ```
+4. Iniciar la aplicación:
+   ```sh
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Uso
+- **Agregar contacto:** Hacer clic en "Add Contact" y completar el formulario.
+- **Editar contacto:** Hacer clic en el botón de editar en la lista de contactos.
+- **Eliminar contacto:** Hacer clic en el botón de eliminar.
+- **Buscar contacto:** Ingresar un nombre o número en el buscador.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Estructura del Proyecto
+```
+contactos-frontend/
+│── src/
+│   ├── components/  # Componentes reutilizables
+│   ├── pages/       # Vistas principales
+│   ├── services/    # Servicios para API
+│   ├── types/       # Tipos de TypeScript
+│   ├── App.tsx      # Componente principal
+│── public/          # Archivos estáticos
+│── package.json     # Dependencias y scripts
+│── README.md        # Documentación
+```
 
-### `npm test`
+## API Backend
+El frontend consume una API que proporciona las siguientes rutas:
+- `GET /contacts` - Obtener todos los contactos.
+- `POST /contacts` - Crear un nuevo contacto.
+- `PUT /contacts/:id` - Actualizar un contacto.
+- `DELETE /contacts/:id` - Eliminar un contacto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Autenticación
+La aplicación utiliza JWT para autenticación.
+- **Login:** Enviar credenciales a `POST /auth/login`.
+- **Registro:** Crear usuario con `POST /auth/register`.
+- **Logout:** Eliminar el token almacenado en `localStorage`.
 
-### `npm run build`
+## Despliegue
+Para construir la aplicación para producción:
+```sh
+npm run build
+```
+Esto generará los archivos estáticos en la carpeta `build/`, listos para ser desplegados en un servidor.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

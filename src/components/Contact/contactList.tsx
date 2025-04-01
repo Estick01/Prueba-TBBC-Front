@@ -23,7 +23,7 @@ const ContactList: React.FC = () => {
         setFilteredContacts(fetchedContacts);
       } catch (err: any) {
         setError("Error fetching contacts");
-        alert(error)
+        
       }
     };
     fetchContacts();
@@ -90,7 +90,6 @@ const ContactList: React.FC = () => {
             </button>
           </div>
         </div>
-
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <AddContactForm setContacts={setContacts} />
         </Modal>

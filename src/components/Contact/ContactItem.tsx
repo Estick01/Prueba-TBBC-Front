@@ -6,7 +6,7 @@ import Modal from "./modal/Modal";
 
 const ContactItem: React.FC<{ 
   contact: Contact; 
-  handleDelete: (id: number) => void;
+  handleDelete: (id: number ) => void;
   setContacts: React.Dispatch<React.SetStateAction<Contact[]>>; // ✅ Asegúrate de recibir setContacts
 }> = ({ contact, handleDelete, setContacts }) => { 
   const [isEditing, setIsEditing] = useState(false);
