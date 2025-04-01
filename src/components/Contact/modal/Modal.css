@@ -1,0 +1,42 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #8b8b8ba6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+
+.modal-container {
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 300px;
+  position: relative;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 28px;
+  right: 33px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 9;
+  width: max-content;
+  padding: 10px;
+}
+
+.acctions{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}

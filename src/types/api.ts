@@ -1,3 +1,4 @@
+
 export interface User {
     username: string;
     email: string;
@@ -12,4 +13,10 @@ export interface User {
     email: string;
     password: string;
   }
-  
+  export interface Contact{
+    id?:number;
+    name:string;
+    phone:string;
+    email:string,
+    user?:User,
+  } 
