@@ -67,10 +67,5 @@ La aplicación utiliza JWT para autenticación.
 - **Registro:** Crear usuario con `POST /auth/register`.
 - **Logout:** Eliminar el token almacenado en `localStorage`.
 
-## Despliegue
-Para construir la aplicación para producción:
-```sh
-npm run build
-```
-Esto generará los archivos estáticos en la carpeta `build/`, listos para ser desplegados en un servidor.
+
 
